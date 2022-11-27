@@ -1,25 +1,16 @@
-package es.urjc.code.ejem1.application.response;
+package es.urjc.code.ejem1.domain.request;
 
 import es.urjc.code.ejem1.domain.ShoppingCartStatus;
 import java.util.List;
 
-public class ShoppingCartResponseDTO {
+public class ShoppingCartDTO {
 
-  private Long id;
   private ShoppingCartStatus status;
-  private List<ShoppingCartItemResponseDTO> items;
+  private List<ShoppingCartItemDTO> items;
   private double price;
 
-  public ShoppingCartResponseDTO() {
+  public ShoppingCartDTO() {
     super();
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public ShoppingCartStatus getStatus() {
@@ -30,11 +21,11 @@ public class ShoppingCartResponseDTO {
     this.status = status;
   }
 
-  public List<ShoppingCartItemResponseDTO> getItems() {
+  public List<ShoppingCartItemDTO> getItems() {
     return items;
   }
 
-  public void setItems(List<ShoppingCartItemResponseDTO> items) {
+  public void setItems(List<ShoppingCartItemDTO> items) {
     this.items = items;
   }
 

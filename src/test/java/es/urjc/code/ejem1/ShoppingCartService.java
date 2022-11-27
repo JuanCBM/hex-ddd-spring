@@ -11,13 +11,14 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.mockito.Mockito;
 import org.modelmapper.ModelMapper;
 
-import es.urjc.code.ejem1.domain.FullProductDTO;
-import es.urjc.code.ejem1.domain.FullShoppingCartDTO;
-import es.urjc.code.ejem1.domain.FullShoppingCartItemDTO;
+import es.urjc.code.ejem1.domain.response.FullProductDTO;
+import es.urjc.code.ejem1.domain.response.FullShoppingCartDTO;
+import es.urjc.code.ejem1.domain.response.FullShoppingCartItemDTO;
 import es.urjc.code.ejem1.domain.Product;
-import es.urjc.code.ejem1.domain.ProductDTO;
+import es.urjc.code.ejem1.domain.request.ProductDTO;
 import es.urjc.code.ejem1.domain.repository.ProductRepository;
 import es.urjc.code.ejem1.domain.service.ProductServiceImpl;
 import es.urjc.code.ejem1.domain.repository.ShoppingCartRepository;
@@ -59,6 +60,7 @@ public class ShoppingCartService {
 	@Test
 	@Order(2)
 	void productCanBeAddedToShoppingCart() {
+		Long id = 1L;
 		Product product = new Product(
 		        "PLUMÍFERO MONTAÑA Y SENDERISMO FORCLAZ TREK100 AZUL CAPUCHA",
 		        "Esta chaqueta acolchada de plumón y plumas, con certificado RDS, abriga bien durante un vivac entre +5 °C y -5 °C.",
@@ -69,8 +71,15 @@ public class ShoppingCartService {
 		verify(productRepository).save(fullProductDTO);
 		
 		int items = Math.abs(new Random().nextInt());
-				
-		createdShoppingCart = shoppingCartService.addProduct(fullProductDTO, createdShoppingCart, items);
+
+		// Ids, after creation.
+		fullProductDTO.setId(id);
+		createdShoppingCart.setId(id);
+
+		Mockito.when(productRepository.findById(Mockito.anyLong())).thenReturn(fullProductDTO);
+		Mockito.when(shoppingCartRepository.findById(Mockito.anyLong())).thenReturn(createdShoppingCart);
+
+		createdShoppingCart = shoppingCartService.addProduct(fullProductDTO.getId(), createdShoppingCart.getId(), items);
 		FullShoppingCartItemDTO fullShoppingCartItemDTO = createdShoppingCart.getItems().get(0);
 
 		assertEquals(fullShoppingCartItemDTO.getQuantity(), items);

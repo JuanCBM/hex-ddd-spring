@@ -1,22 +1,13 @@
-package es.urjc.code.ejem1.application.response;
+package es.urjc.code.ejem1.domain.request;
 
-public class ProductResponseDTO {
+public class ProductDTO {
 
-  private Long id;
   private String name;
   private String description;
   private double price;
 
-  public ProductResponseDTO() {
+  public ProductDTO() {
     super();
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public String getName() {

@@ -1,11 +1,10 @@
 package es.urjc.code.ejem1.infrastructure.repository.mongo;
 
-import es.urjc.code.ejem1.domain.FullProductDTO;
 import es.urjc.code.ejem1.domain.repository.ProductRepository;
+import es.urjc.code.ejem1.domain.response.FullProductDTO;
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 // TODO
 @Component

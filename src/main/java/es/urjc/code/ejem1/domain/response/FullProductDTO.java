@@ -1,32 +1,14 @@
-package es.urjc.code.ejem1.infrastructure.repository.mongo;
+package es.urjc.code.ejem1.domain.response;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+public class FullProductDTO {
 
-@Document("product")
-public class ProductDocument {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   private String name;
-
   private String description;
-
   private double price;
 
-  public ProductDocument() {
+  public FullProductDTO() {
     super();
-  }
-
-  public ProductDocument(Long id, String name, String description, double price) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.price = price;
   }
 
   public Long getId() {

@@ -1,19 +1,16 @@
-package es.urjc.code.ejem1.domain;
+package es.urjc.code.ejem1.domain.response;
 
-public class ShoppingCartItem {
+import es.urjc.code.ejem1.domain.Product;
+
+public class FullShoppingCartItemDTO {
 
   private Long id;
   private Product product;
   private int quantity;
+  private double totalPrice;
 
-  public ShoppingCartItem() {
+  public FullShoppingCartItemDTO() {
     super();
-  }
-
-  public ShoppingCartItem(Product product, int quantity) {
-    super();
-    this.product = product;
-    this.quantity = quantity;
   }
 
   public Long getId() {
@@ -41,7 +38,10 @@ public class ShoppingCartItem {
   }
 
   public double getTotalPrice() {
-    return this.quantity * this.product.getPrice();
+    return totalPrice;
   }
 
+  public void setTotalPrice(double totalPrice) {
+    this.totalPrice = totalPrice;
+  }
 }

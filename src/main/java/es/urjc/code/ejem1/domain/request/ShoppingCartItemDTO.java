@@ -1,24 +1,15 @@
-package es.urjc.code.ejem1.application.response;
+package es.urjc.code.ejem1.domain.request;
 
 import es.urjc.code.ejem1.domain.Product;
 
-public class ShoppingCartItemResponseDTO {
+public class ShoppingCartItemDTO {
 
-  private Long id;
   private Product product;
   private int quantity;
   private double totalPrice;
 
-  public ShoppingCartItemResponseDTO() {
+  public ShoppingCartItemDTO() {
     super();
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public Product getProduct() {

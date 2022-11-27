@@ -8,57 +8,57 @@ import javax.persistence.Id;
 @Entity
 public class ProductEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String name;
-	
-	private String description;
-	
-	private double price;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-	public ProductEntity() {
-		super();
-	}
+  private String name;
 
-	public ProductEntity(Long id, String name, String description, double price) {
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.price = price;
-	}
+  private String description;
 
-	public Long getId() {
-		return id;
-	}
+  private double price;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+  public ProductEntity() {
+    super();
+  }
 
-	public String getName() {
-		return name;
-	}
+  public ProductEntity(Long id, String name, String description, double price) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.price = price;
+  }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  public Long getId() {
+    return id;
+  }
 
-	public String getDescription() {
-		return description;
-	}
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public double getPrice() {
-		return price;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
+  }
 
 }

@@ -3,19 +3,19 @@ package es.urjc.code.ejem1.application.request;
 import es.urjc.code.ejem1.domain.ShoppingCartStatus;
 
 public class ShoppingCartRequestDTO {
-	
-	private ShoppingCartStatus status;
 
-	public ShoppingCartRequestDTO() {
-		super();
-	}
+  private ShoppingCartStatus status;
 
-	public ShoppingCartStatus getStatus() {
-		return status;
-	}
+  public ShoppingCartRequestDTO() {
+    super();
+  }
 
-	public void setStatus(ShoppingCartStatus status) {
-		this.status = status;
-	}
+  public ShoppingCartStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(ShoppingCartStatus status) {
+    this.status = status;
+  }
 
 }

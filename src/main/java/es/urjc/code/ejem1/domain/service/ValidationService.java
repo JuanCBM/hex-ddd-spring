@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface ValidationService {
 
-	boolean validate(List<ShoppingCartItem> items);
-	
+  boolean validate(List<ShoppingCartItem> items);
+
 }
